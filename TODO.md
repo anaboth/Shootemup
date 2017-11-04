@@ -1,0 +1,4 @@
+- Add enemies
+- Add score
+- Add background
+- Change skins
