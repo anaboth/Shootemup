@@ -4,48 +4,16 @@
 
 #include "Player.h"
 
-float Player::getX() const {
-    return x;
-}
-
-void Player::setX(float x) {
-    Player::x = x;
-}
-
-float Player::getY() const {
-    return y;
-}
-
-void Player::setY(float y) {
-    Player::y = y;
-}
-
-int Player::getW() const {
-    return w;
-}
-
-void Player::setW(int w) {
-    Player::w = w;
-}
-
-int Player::getH() const {
-    return h;
-}
-
-void Player::setH(int h) {
-    Player::h = h;
-}
-
 Player::Player() {
-    x = 350;
-    y = 550;
-    w = 50;
-    h = 50;
+    rect.x = 350;
+    rect.y = 550;
+    rect.w = 50;
+    rect.h = 50;
 
 }
 
 void Player::update() {
-    if(x > 0 && x < 750) x += speedX; else if (x >= 750) x -= 1; else x += 1;
+    if(rect.x > 0 && rect.x < 750) rect.x += speedX; else if (rect.x >= 750) rect.x -= 1; else rect.x += 1;
     speedX = 0;
     //if(y > 0 && y < 600) y -= speedY;
 }
@@ -68,4 +36,12 @@ float Player::getSpeedX() const {
 
 void Player::setSpeedX(float speedX) {
     Player::speedX = speedX;
+}
+
+const SDL_Rect &Player::getRect() const {
+    return rect;
+}
+
+void Player::setRect(const SDL_Rect &rect) {
+    Player::rect = rect;
 }

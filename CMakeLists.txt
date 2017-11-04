@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 3.8)
 project(ShootemUP)
 
 set(CMAKE_CXX_STANDARD 17)
-
-set(SOURCE_FILES src/main.cpp src/Player.cpp src/Player.h src/Bullet.cpp src/Bullet.h)
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O2")
+set(SOURCE_FILES src/main.cpp src/Player.cpp src/Player.h src/Bullet.cpp src/Bullet.h src/Enemy.cpp src/Enemy.h)
 add_executable(${PROJECT_NAME} ${SOURCE_FILES})
 
 INCLUDE(FindPkgConfig)

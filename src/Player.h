@@ -6,31 +6,24 @@
 #define EDIARARDO_PLAYER_H
 
 
+#include <SDL_rect.h>
+
 class Player {
 private:
-    float x;
-    float y;
-    int w;
-    int h;
     float speedY;
     float speedX;
+    SDL_Rect rect;
 
 public:
     Player();
     void update();
     void draw();
-    float getX() const;
-    void setX(float x);
-    float getY() const;
-    void setY(float y);
-    int getW() const;
-    void setW(int w);
-    int getH() const;
-    void setH(int h);
     float getSpeedY() const;
     void setSpeedY(float speedY);
     float getSpeedX() const;
     void setSpeedX(float speedX);
+    const SDL_Rect &getRect() const;
+    void setRect(const SDL_Rect &rect);
 };
 
 

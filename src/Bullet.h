@@ -6,16 +6,16 @@
 #define SHOOTEMUP_BULLET_H
 
 
+#include <SDL_rect.h>
+
 class Bullet {
 private:
-    float x;
-    float y;
-    int w;
-    int h;
+    SDL_Rect rect;
+    int direction;
     float speedY;
     float timeToDie;
-    float currentTime;
     bool deadV;
+    float currentTime;
 
 public:
     Bullet();
@@ -23,16 +23,11 @@ public:
     void update();
     float getTimeToDie() const;
     void setTimeToDie(float timeToDie);
-    float getX() const;
-    void setX(float x);
-    float getY() const;
-    void setY(float y);
-    int getW() const;
-    void setW(int w);
-    int getH() const;
-    void setH(int h);
     float getSpeedY() const;
     void setSpeedY(float speedY);
+    const SDL_Rect &getRect() const;
+    void setRect(const SDL_Rect &rect);
+    void setDirection(int direction);
 };
 
 
