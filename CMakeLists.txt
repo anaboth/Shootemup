@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O2`")
 set(SOURCE_FILES src/main.cpp src/Player.cpp src/Player.h src/Bullet.cpp src/Bullet.h src/Enemy.cpp src/Enemy.h)
 add_executable(${PROJECT_NAME} ${SOURCE_FILES})
+file(COPY "src/fonts/Hack.ttf" DESTINATION ".")
 
 INCLUDE(FindPkgConfig)
 
