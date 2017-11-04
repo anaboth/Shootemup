@@ -45,3 +45,16 @@ const SDL_Rect &Player::getRect() const {
 void Player::setRect(const SDL_Rect &rect) {
     Player::rect = rect;
 }
+
+void Player::shoot(std::vector<Bullet> &bulletVector) {
+    Bullet tmp;
+    SDL_Rect temp = {rect.x + rect.h / 2,
+                     rect.y - tmp.getRect().w,
+                     tmp.getRect().w,
+                     tmp.getRect().h};
+    tmp.setRect(temp);
+    tmp.setSpeedY(9);
+    tmp.setTimeToDie(10);
+    tmp.setDirection(1);
+    bulletVector.push_back(tmp);
+}

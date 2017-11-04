@@ -7,14 +7,20 @@
 
 
 #include <SDL_rect.h>
+#include <vector>
+#include "Bullet.h"
 
 class Enemy {
 private:
     bool alive;
     SDL_Rect rect;
+    float nextShoot;
+    float currentShoot;
 
 public:
-    void update();
+    Enemy();
+    void shoot(std::vector<Bullet>& bulletVector);
+    void update(std::vector<Bullet>& bulletVector);
     bool isAlive() const;
     void setAlive(bool alive);
     const SDL_Rect &getRect() const;

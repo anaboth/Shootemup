@@ -7,6 +7,8 @@
 
 
 #include <SDL_rect.h>
+#include <vector>
+#include "Bullet.h"
 
 class Player {
 private:
@@ -16,6 +18,7 @@ private:
 
 public:
     Player();
+    void shoot(std::vector<Bullet>& bulletVector);
     void update();
     void draw();
     float getSpeedY() const;
