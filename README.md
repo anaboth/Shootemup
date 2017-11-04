@@ -20,4 +20,6 @@ make
 ```
 
 For running
-```$ ./Shootemup```
+```
+$ ./Shootemup
+```
