@@ -38,7 +38,7 @@ Enemy::Enemy() {
 void Enemy::shoot(std::vector<Bullet> &bulletVector) {
     Bullet tmp;
     SDL_Rect temp = {rect.x + rect.h / 2,
-                     rect.y + rect.w,
+                     rect.y + rect.w + tmp.getRect().w,
                      tmp.getRect().w,
                      tmp.getRect().h};
     tmp.setRect(temp);
@@ -46,4 +46,24 @@ void Enemy::shoot(std::vector<Bullet> &bulletVector) {
     tmp.setTimeToDie(10);
     tmp.setDirection(-1);
     bulletVector.push_back(tmp);
+}
+
+bool Enemy::hit(SDL_Rect other) {
+    if(rect.x + rect.w > other.x && rect.x + rect.w < other.x + other.h &&
+       rect.y + rect.h > other.y && rect.y + rect.h < other.y + other.h)
+        return true;
+
+    if(rect.x + rect.w > other.x && rect.x + rect.w < other.x + other.h &&
+       rect.y > other.y && rect.y < other.y + other.h)
+        return true;
+
+    if(rect.x > other.x && rect.x < other.x + other.h &&
+       rect.y + rect.h > other.y && rect.y + rect.h < other.y + other.h)
+        return true;
+
+    if(rect.x > other.x && rect.x < other.x + other.w &&
+       rect.y > other.y && rect.y < other.y + other.h)
+        return true;
+
+    return false;
 }

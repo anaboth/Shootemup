@@ -19,6 +19,7 @@ private:
 
 public:
     Bullet();
+    bool hit(SDL_Rect other);
     bool dead();
     void update();
     float getTimeToDie() const;

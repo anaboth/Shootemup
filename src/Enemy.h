@@ -21,6 +21,7 @@ public:
     Enemy();
     void shoot(std::vector<Bullet>& bulletVector);
     void update(std::vector<Bullet>& bulletVector);
+    bool hit(SDL_Rect other);
     bool isAlive() const;
     void setAlive(bool alive);
     const SDL_Rect &getRect() const;
