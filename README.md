@@ -7,7 +7,7 @@ Pre-requisites
 - SDL2_image
 - SDL2_ttf
 - GCC>=7
-- CMake>=3
+- CMake>=3.8
 - Make
 
 
@@ -20,4 +20,6 @@ make
 ```
 
 For running
-`$ ./Shootemup`
+```
+$ ./Shootemup
+```
